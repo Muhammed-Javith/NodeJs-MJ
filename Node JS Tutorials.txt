@@ -1,0 +1,123 @@
+Node Js:
+ - not alone for web development and it can do the samework that
+   php and python etc.., doing.
+what is node js?
+  - JS runtime
+- Js used to do user interface operation.
+- we can use this to make webserver[with the help of nodejs we
+  can create a web application].
+- can be used as programming language because it used to run JS code
+  out of browser too.
+how nodejs works?
+ chrome -> v8 engine -> machine code.
+- chrome gives js code to v8 engine.
+- v8 engine will be in chrome.
+- written in c++
+- similiar above node js also have inbuilt v8 engine with some
+  additional features.
+   - features:
+	- browser cannot access files(dueto security & hacking)
+	  and network details. but nodejs can done.
+	- node js have modules
+		- modules contain  the following:
+			- file system
+			- os
+			- http
+		- through this module you can access file systems
+		  and send the data through network.
+- nodejs installations:
+	- install LTS  version.
+	- node -V (to see the version of nodej)
+	- npm -v (to see npm version)
+
+
+01.firstappjs
+	see the code and to run node firstapp.js
+
+require() vs require('fs')
+require(): it defines we going to use somefiles.
+require('fs'): denotes that file system nodejs 
+		this is called module (see the example)
+
+how web works?
+1.user browse some url (ex:htttps://google.com)
+2.then it will look the domain lookup
+	take google.com and replaces with server IP and then
+	it forwarded to server.
+3.after that request will sent to server.
+4.then we will get response as html,json etc..,
+5.here to understand request and response we should use http and https:
+ - http: 	
+	hyper text transfer protocol
+	less secure than https.
+ - https:
+	hyper text transfer protocol sharing
+	more secure than http.
+
+creating node server:
+	- see the 3rd and 4th program under basics
+core modules:
+	fs  - file related operations
+	http  -  used to create server
+	https - used to create secure server
+	path - to use the proper path
+	os - to know the os information.
+nodejs lifecycle:
+1.cmd> node app.js
+2.start the program
+3.register function and variables
+4. event loop
+	- starts when we use listener
+	- event loop run till listener run
+	- keep running when event listeners registered.
+	- mainthing of nodejs:
+		- event loop run when we do db operations.
+		- that's why nodejs called event triggered architecture  nodejs.
+		- to stop event listener add process.exit() after console log.
+nodejs event driver architecture:
+-nodejs - event driven architecture
+	- based on event.
+async code: based on time/event executed.
+non-blocking code: executed before async-code and will run without blocking.
+single thread:
+   nodejs will take single thread for multiple request why?
+	if we take each thread for each request then memory will
+	be filled quickly then machine will be down.
+   how it done with single thread:
+	- if a thread take one request and other request will be in queue and wait.
+	  to avoid this we introduced that concept called "event-loop".
+	  - event loop:
+		- for small event it will give quick response.
+		- what about big event like file system?
+		  - fs related work it will send to workerpools.
+		    this worker pool, do the read and write operation in os anywhere
+		    handled with multiple request.
+		 - when read/write operations completed in OS then it will ask event loop to trigger
+		   the call back function for read/write jobs.
+		 - then event loop call function completed it and meanwhile nodejs will handle the other request.
+		 - here one request cannot know about the another request details and date.
+- for every change you need to restart your nodejs application every time.
+  to avoid that we using npm .
+  npm  - node package manager.
+- run npm init and it will initial the package.json.
+  after created that file you need to add following line after test command:
+	"start" : "node app.js"
+- nodemon:
+	- package installed in development only.
+	- npm install nodemon --save -dev  dev dependency
+	- npm install nodemon --save       prod dependency.
+	- npm install nodemon -g  means installed in system not in project.
+- types of errors:
+1.syntax errors  - error in syntax
+2.run time errors - will get while run the code
+3.logical errors - we find the through debugging.
+
+file upload - npm install formidable
+
+
+	
+
+
+
+
+
